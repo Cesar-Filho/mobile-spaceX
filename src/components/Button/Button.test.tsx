@@ -71,4 +71,84 @@ describe('Render Button', () => {
       color: theme.colors.primary,
     });
   });
+
+  test('it renders a text button', () => {
+    const title = 'Test Button';
+
+    const {getByTestId, getByText} = render(
+      <Button title={title} mode="text" />,
+    );
+
+    expect(getByTestId('ComponentButton')).not.toHaveStyle({
+      borderTopWidth: 1,
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderLeftWidth: 1,
+      borderTopColor: theme.colors.primary,
+      borderRightColor: theme.colors.primary,
+      borderBottomColor: theme.colors.primary,
+      borderLeftColor: theme.colors.primary,
+      backgroundColor: theme.colors.primary,
+    });
+    expect(getByText(title)).toHaveStyle({
+      ...typography.button,
+      color: theme.colors.primary,
+    });
+  });
+
+  test('it renders a secondary button', () => {
+    const title = 'Test Button';
+
+    const {getByTestId} = render(<Button title={title} secondary />);
+
+    expect(getByTestId('ComponentButton')).toHaveStyle({
+      backgroundColor: theme.colors.secondary,
+    });
+  });
+
+  test('it renders a secondary outlined button', () => {
+    const title = 'Test Button';
+
+    const {getByTestId, getByText} = render(
+      <Button title={title} secondary mode="outlined" />,
+    );
+
+    expect(getByTestId('ComponentButton')).toHaveStyle({
+      borderTopWidth: 1,
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderLeftWidth: 1,
+      borderTopColor: theme.colors.secondary,
+      borderRightColor: theme.colors.secondary,
+      borderBottomColor: theme.colors.secondary,
+      borderLeftColor: theme.colors.secondary,
+    });
+    expect(getByText(title)).toHaveStyle({
+      ...typography.button,
+      color: theme.colors.secondary,
+    });
+  });
+
+  test('it renders a secondary text button', () => {
+    const title = 'Test Button';
+
+    const {getByTestId, getByText} = render(
+      <Button title={title} secondary mode="text" />,
+    );
+
+    expect(getByTestId('ComponentButton')).not.toHaveStyle({
+      borderTopWidth: 1,
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderLeftWidth: 1,
+      borderTopColor: theme.colors.secondary,
+      borderRightColor: theme.colors.secondary,
+      borderBottomColor: theme.colors.secondary,
+      borderLeftColor: theme.colors.secondary,
+    });
+    expect(getByText(title)).toHaveStyle({
+      ...typography.button,
+      color: theme.colors.secondary,
+    });
+  });
 });
