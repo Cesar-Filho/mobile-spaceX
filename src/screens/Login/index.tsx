@@ -1,6 +1,4 @@
 import React, {useRef, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {Routes} from '@navigators/routes';
 import {TextInput} from 'react-native';
 
 import {useAppDispatch} from '@store/hook';
@@ -17,14 +15,12 @@ export function LoginScreen() {
   const [username, setUserName] = useState('');
   const [error, setError] = useState('');
   const passwordRef = useRef<TextInput>(null);
-  const {navigate} = useNavigation();
   const dispatch = useAppDispatch();
 
   const onSubmit = async () => {
     if (username) {
       setError('');
-      dispatch(AuthActions.setAuth({username}));
-      return navigate(Routes.HOME);
+      return dispatch(AuthActions.setAuth({username}));
     }
 
     return setError('Nome do usuário é obrigatório!');

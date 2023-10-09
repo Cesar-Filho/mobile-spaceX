@@ -5,6 +5,7 @@ export declare global {
     interface RootParamList {
       [Routes.LOGIN]: undefined;
       [Routes.HOME]: undefined;
+      [Routes.BOTTOM_TAB]: undefined;
     }
   }
 }
