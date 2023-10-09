@@ -13,8 +13,13 @@ interface LabelProps extends TextProps {
 }
 
 export default {
-  Container: styled.View`
+  Container: styled.View<{flex?: number}>`
     flex-direction: row;
+    ${({flex}) =>
+      flex &&
+      css`
+        flex: ${flex};
+      `}
   `,
   Button: styled.TouchableOpacity<ButtonProps>`
     flex: 1;

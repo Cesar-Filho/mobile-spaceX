@@ -1,12 +1,21 @@
 import {StyleSheet} from 'react-native';
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 
 import {Typography} from '@components/Typography';
 
 export default {
-  Container: styled.View`
+  Container: styled.View<{flex?: number}>`
+    flex-direction: row;
+    ${({flex}) =>
+      flex &&
+      css`
+        flex: ${flex};
+      `}
+  `,
+
+  Content: styled.View`
     height: 84px;
-    width: 100%;
+    flex: 1;
     margin-vertical: ${({theme}) => theme.spacing.XS}px;
   `,
 

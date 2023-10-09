@@ -1,5 +1,4 @@
-import React, {useRef, useState} from 'react';
-import {TextInput} from 'react-native';
+import React, {useState} from 'react';
 
 import {useAppDispatch} from '@store/hook';
 import {AuthActions} from '@store/modules/auth';
@@ -14,7 +13,6 @@ import S from './styles';
 export function LoginScreen() {
   const [username, setUserName] = useState('');
   const [error, setError] = useState('');
-  const passwordRef = useRef<TextInput>(null);
   const dispatch = useAppDispatch();
 
   const onSubmit = async () => {
@@ -40,7 +38,7 @@ export function LoginScreen() {
           placeholder="Digite seu nome de usuário"
           returnKeyType="next"
           autoCapitalize="none"
-          onSubmitEditing={() => passwordRef?.current?.focus()}
+          onSubmitEditing={onSubmit}
           onChangeText={setUserName}
           error={error}
         />

@@ -2,10 +2,10 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {useAppSelector} from '@store/hook';
+import {WebViewScreen} from '@screens/WebView';
 import {LoginScreen} from '@screens/Login';
-
-import {Routes} from './routes';
 import {BottomTab} from './bottomTab';
+import {Routes} from './routes';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +31,11 @@ export const Navigator = () => {
           }}
         />
       )}
+      <Stack.Screen
+        name={Routes.WEB_VIEW}
+        component={WebViewScreen}
+        options={{title: 'Detalhe', headerBackTitle: 'Voltar'}}
+      />
     </Stack.Navigator>
   );
 };

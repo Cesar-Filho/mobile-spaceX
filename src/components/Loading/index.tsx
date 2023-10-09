@@ -6,7 +6,7 @@ import S from './styles';
 
 export function Loading() {
   return (
-    <Container>
+    <Container justify="center" align="center">
       <S.Activity testID="Loading" />
     </Container>
   );

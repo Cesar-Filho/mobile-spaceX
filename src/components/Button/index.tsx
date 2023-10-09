@@ -7,6 +7,7 @@ interface ButtonProps extends TouchableOpacityProps {
   title: string;
   mode?: 'container' | 'outlined' | 'text';
   secondary?: boolean;
+  flex?: number;
 }
 
 export function Button({
@@ -14,10 +15,11 @@ export function Button({
   title,
   mode,
   secondary,
+  flex,
   ...props
 }: ButtonProps) {
   return (
-    <S.Container>
+    <S.Container flex={flex}>
       <S.Button
         activeOpacity={0.8}
         testID="ComponentButton"

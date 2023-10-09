@@ -13,7 +13,7 @@ export function BottomTab() {
       <Tab.Screen
         name={Routes.HOME}
         component={HomeScreen}
-        options={{title: 'Home'}}
+        options={{title: 'Lançamentos'}}
       />
       <Tab.Screen
         name={Routes.SETTINGS}

@@ -6,6 +6,7 @@ export declare global {
       [Routes.LOGIN]: undefined;
       [Routes.HOME]: undefined;
       [Routes.BOTTOM_TAB]: undefined;
+      [Routes.WEB_VIEW]: {uri: string};
     }
   }
 }

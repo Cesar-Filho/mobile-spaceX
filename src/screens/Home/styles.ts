@@ -1,17 +1,12 @@
-import {Typography} from '@components/Typography';
 import styled from 'styled-components/native';
+import {Button} from '@components/Button';
 
 export default {
-  FallbackLabel: styled(Typography)`
-    color: ${({theme}) => theme.colors.primary};
-    text-align: center;
+  Detail: styled(Button)`
+    margin-top: ${({theme}) => theme.spacing.XXS}px;
   `,
 
-  ScrollWrapper: styled.ScrollView.attrs(({theme}) => ({
-    showsVerticalScrollIndicator: false,
-    contentContainerStyle: {
-      flex: 1,
-      padding: theme.spacing.MD,
-    },
-  }))``,
+  ShowVideo: styled(Button)`
+    margin-top: ${({theme}) => theme.spacing.XXS}px;
+  `,
 };
