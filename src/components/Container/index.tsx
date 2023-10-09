@@ -21,7 +21,9 @@ interface ContainerProps extends SafeAreaProviderProps {
     | 'space-around';
 }
 
-export const Container = styled(SafeAreaView)<ContainerProps>`
+export const Container = styled(SafeAreaView).attrs({
+  testID: 'ComponentContainer',
+})<ContainerProps>`
   flex: 1;
   padding: ${({theme}) => theme.spacing.MD}px;
   background-color: ${({theme}) => theme.colors.common.white};
