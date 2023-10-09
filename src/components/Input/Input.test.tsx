@@ -57,4 +57,14 @@ describe('Render Input', () => {
 
     expect(getByText(error)).toHaveTextContent(error);
   });
+
+  it('should render flex Input', () => {
+    const {getByTestId} = render(
+      <Input label="Password" placeholder="Enter your password" flex={2} />,
+    );
+
+    expect(getByTestId('ContainerInput')).toHaveStyle({
+      flexGrow: 2,
+    });
+  });
 });

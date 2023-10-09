@@ -26,4 +26,17 @@ describe('Render Card', () => {
       backgroundColor: theme.colors.common.white,
     });
   });
+
+  test('it renders props row Card', () => {
+    const title = 'Test Card';
+    const {getByTestId} = render(
+      <Card row>
+        <Text>{title}</Text>
+      </Card>,
+    );
+
+    expect(getByTestId('ComponentCard')).toHaveStyle({
+      flexDirection: 'row',
+    });
+  });
 });

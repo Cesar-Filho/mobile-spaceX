@@ -151,4 +151,14 @@ describe('Render Button', () => {
       color: theme.colors.secondary,
     });
   });
+
+  test('it renders a flex button', () => {
+    const title = 'Test Button';
+
+    const {getByTestId} = render(<Button title={title} flex={1} />);
+
+    expect(getByTestId('ComponentButton')).toHaveStyle({
+      flexGrow: 1,
+    });
+  });
 });

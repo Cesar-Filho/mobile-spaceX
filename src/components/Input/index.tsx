@@ -14,7 +14,7 @@ function ComponentInput(
   ref: React.LegacyRef<TextInput>,
 ) {
   return (
-    <S.Container flex={flex}>
+    <S.Container flex={flex} testID="ContainerInput">
       <S.Content style={style}>
         <S.Label variation="body">{label}</S.Label>
         <S.Input ref={ref} {...props} />
