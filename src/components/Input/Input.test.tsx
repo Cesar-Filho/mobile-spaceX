@@ -44,4 +44,17 @@ describe('Render Input', () => {
 
     expect(onChangeTextMock).toHaveBeenCalledWith('newPassword123');
   });
+
+  it('should render error', () => {
+    const error = 'Error Found';
+    const {getByText} = render(
+      <Input
+        label="Password"
+        placeholder="Enter your password"
+        error={error}
+      />,
+    );
+
+    expect(getByText(error)).toHaveTextContent(error);
+  });
 });
