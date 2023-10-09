@@ -43,7 +43,7 @@ export function HomeScreen() {
   }
 
   return (
-    <>
+    <S.Container>
       <ListHeader search={search} setSearch={setSearch} />
       <FlatList
         data={list}
@@ -57,6 +57,6 @@ export function HomeScreen() {
           offset: LAUNCHES_HEIGHT * index,
         })}
       />
-    </>
+    </S.Container>
   );
 }
